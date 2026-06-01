@@ -111,7 +111,9 @@ input[type="file"] {
 }
 
 /* ----------------------------------------------------------------------- */
-
+body {
+  padding-bottom: 20px;
+}
 header {
   background-image: linear-gradient(to right, yellow, orange);
   padding: 20px 10px;
@@ -152,9 +154,51 @@ h2 {
   padding: 10px;
   justify-items: center;
   justify-content: center;
+  transition: all 0.2s;
+}
+.item:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(128, 128, 128, 0.5) 5px 5px 5px;
 }
 img {
   display: grid;
   width: 100%;
   max-width: 200px;
+}
+.progress {
+  display: flex;
+  width: 300px;
+  height: 30px;
+  background: #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 15px;
+}
+.wantDiv {
+  display: flex;
+  justify-content: start;
+}
+.fill {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+}
+.want {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: large;
+  margin: 15px;
+  background-color: rgba(255, 166, 0, 0.3);
+  border: peachpuff solid 18px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.howMuch {
+  display: flex;
+  width: 80px;
+  margin: 5px 5px 5px 10px;
 }
