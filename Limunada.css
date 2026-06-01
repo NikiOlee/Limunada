@@ -118,9 +118,9 @@ header {
 }
 .headerTxt {
   position: absolute;
-  margin-top: 20px;
+  margin-top: 13px;
   font-family: Arial;
-  font-size: xx-large;
+  font-size: 50px;
   font-weight: bold;
 }
 .logo {
