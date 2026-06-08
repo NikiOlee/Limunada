@@ -1,7 +1,7 @@
 const fillN = document.getElementById("fillN");
 const fillM = document.getElementById("fillM");
 let percentN = 40;
-let percentM = 50;
+let percentM = 60;
 
 fillN.style.width = `${percentN}%`;
 fillN.textContent = `${percentN}% - ${65000 * (percentN / 100)}`;
