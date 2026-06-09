@@ -1,10 +1,14 @@
 const fillN = document.getElementById("fillN");
 const fillM = document.getElementById("fillM");
-let percentN = 40;
-let percentM = 43.33;
+let moneyN = 26000;
+let moneyM = 26000;
+let needN = 65000;
+let needM = 60000;
+let percentN = Math.floor((moneyN / needN) * 100);
+let percentM = Math.floor((moneyM / needM) * 100);
 
 fillN.style.width = `${percentN}%`;
-fillN.textContent = `${percentN}% - ${65000 * (percentN / 100)}`;
+fillN.textContent = `~${percentN}% - ~${moneyN}`;
 
 fillM.style.width = `${percentM}%`;
-fillM.textContent = `${percentM}% - ${60000 * (percentM / 100)}`;
+fillM.textContent = `~${percentM}% - ~${moneyM}`;
