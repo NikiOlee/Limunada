@@ -108,24 +108,25 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-image: linear-gradient(to right, yellow, orange);
-  padding: 20px 10px;
+  padding: 20px;
 }
 
 .headerTxt {
-  position: absolute;
-  margin-top: 13px;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 50px;
   font-weight: bold;
+  color: #222;
 }
 
 .logo {
-  display: flex;
-  justify-self: end;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .main {
