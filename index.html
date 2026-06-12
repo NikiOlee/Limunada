@@ -17,7 +17,7 @@
       <div class="item">
         <h2>Limunada</h2>
         <img src="Limunada.png" />
-        <h3>100 din</h3>
+        <h3 class="price">100 din</h3>
         <p class="whatIn">
           Cena uključuje limunadu, led, deo limuna i čašu od kartona.
         </p>
@@ -25,7 +25,7 @@
       <div class="item">
         <h2>Voda sa ledom</h2>
         <img src="VodaSaLedom.png" />
-        <h3>10 din</h3>
+        <h3 class="price">10 din</h3>
         <p class="whatIn">
           Cena uključuje česmušu, led i čašu od kartona.
         </p>
@@ -33,7 +33,7 @@
       <div class="item">
         <h2>Voda Premium (sa ledom)</h2>
         <img src="DeluxeVoda.png" />
-        <h3>50 din</h3>
+        <h3 class="price">50 din</h3>
         <p class="whatIn">
           Cena uključuje filtriranu vodu, led, deo limuna, šećer i čašu od
           kartona.
@@ -42,7 +42,7 @@
       <div class="item">
         <h2>Sok od pomorandže</h2>
         <img src="Pomorandza.png" />
-        <h3>100 din</h3>
+        <h3 class="price">100 din</h3>
         <p class="whatIn">
           Cena uključuje sok od narandže, led i čašu od kartona.
         </p>
@@ -50,27 +50,23 @@
       <div class="item">
         <h2>Sok od jabuke</h2>
         <img src="sokOdJabuke.png" />
-        <h3>100 din</h3>
+        <h3 class="price">100 din</h3>
         <p class="whatIn">
           Cena uključuje sok od jabuke, led i čašu od kartona.
         </p>
       </div>
-      <div class="item" style="position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 13px; right: -27px; background-color: #ff4757; color: white; padding: 4px 30px; font-weight: bold; font-size: 12px; font-family: Arial, sans-serif; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px; text-transform: uppercase; letter-spacing: 1px; transform: rotate(45deg); width: 100px; text-align: center;">
-          Akcija
-        </div>
-
-        <h2 style="padding-right: 15px; text-align: left;">Sok od narandže premium (gaziran)</h2>
+      <div class="item promo">
+        <div class="action-badge">Akcija</div>
+        <h2>Sok od narandže premium (gaziran)</h2>
         <img src="PomorandžaPremium.png" />
-        <h3 style="text-decoration: line-through; color: #888; font-size: large; margin-top: 50px;">150 din</h3>
-        <h3 style="color: #ff4757; font-weight: bold; font-size: 24px; margin-top: 5px;">120 din</h3>
+        <h3 class="old-price">150 din</h3>
+        <h3 class="new-price">120 din</h3>
         <p class="whatIn">
           Cena uključuje Fantu pomešanu sa Sprajtom, led i čašu od kartona.
         </p>
       </div>
     </div>
     <h2 class="section-title">Želja</h2>
-
     <div class="wishes-grid">
       <div class="wish-card">
         <div class="wish-content">
@@ -86,9 +82,8 @@
           <div class="progress">
             <div class="fill" id="fillN">0%</div>
           </div>
-          <p class="howMuch">~65 000 din</p>
+          <p class="howMuch"></p>
         </div>
-      </div>
       </div>
     </div>
     <script src="Limunada.js"></script>

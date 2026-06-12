@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 * {
   padding: 0px;
   margin: 0px;
@@ -105,18 +107,21 @@ input[type="file"] {
 
 body {
   padding-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fdfbf7;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: linear-gradient(to right, yellow, orange);
-  padding: 20px;
+  background-image: linear-gradient(to right, #ffee55, #ff9900);
+  padding: 15px 25px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .headerTxt {
-  font-family: Arial, sans-serif;
   font-size: 40px;
   font-weight: bold;
   color: #222;
@@ -144,27 +149,42 @@ h2 {
 }
 
 .item {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   border: antiquewhite solid 18px;
   background-color: rgba(255, 166, 0, 0.1);
   border-radius: 8px;
-  padding: 10px;
-  justify-items: center;
-  justify-content: center;
+  padding: 15px;
   transition: all 0.2s;
 }
+
 .item img {
   height: auto;
   max-height: 200px;
   object-fit: contain;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: transform 0.3s ease;
 }
+
+.item:hover img {
+  transform: scale(1.08);
+}
+
+.price,
+.old-price {
+  margin-top: auto;
+  padding-top: 15px;
+}
+
 .item:hover {
   transform: translateY(-2px);
   box-shadow: rgba(128, 128, 128, 0.5) 5px 5px 5px;
 }
 
 .section-title {
-  font-family: Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -190,6 +210,12 @@ h2 {
   border-radius: 8px;
   padding: 15px;
   overflow: hidden;
+  transition: all 0.2s;
+}
+
+.wish-card:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(128, 128, 128, 0.5) 0px 5px 5px;
 }
 
 .card-bg-img {
@@ -213,14 +239,12 @@ h2 {
 }
 
 .wish-title {
-  font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: large;
   margin-bottom: 5px;
 }
 
 .wish-details {
-  font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.4;
   color: #333;
@@ -241,30 +265,140 @@ h2 {
   display: flex;
   flex-grow: 1;
   min-width: 200px;
-  height: 30px;
-  background: #ddd;
-  border-radius: 15px;
+  height: 24px;
+  background: #eaeaea;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .fill {
   width: 0%;
   height: 100%;
-  background: limegreen;
-  color: black;
+  background: linear-gradient(to right, #2ed573, #00b894);
+  color: #222222;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+  padding-left: 12px;
   line-height: 30px;
+  white-space: nowrap;
 }
 
 .howMuch {
   display: flex;
   align-items: center;
-  font-family: Arial, sans-serif;
   font-weight: bold;
   white-space: nowrap;
 }
+
 .whatIn {
   color: rgba(0, 0, 0, 0.65);
   margin: 5px 20px 0px 20px;
+}
+
+.item.promo {
+  position: relative;
+  overflow: hidden;
+}
+
+.item.promo h2 {
+  padding-right: 15px;
+  text-align: left;
+}
+
+.action-badge {
+  position: absolute;
+  top: 11px;
+  right: -25px;
+  background-color: #ff4757;
+  color: white;
+  padding: 4px 30px;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: rotate(45deg);
+  width: 100px;
+  text-align: center;
+  animation: pulseBadge 2s infinite ease-in-out;
+}
+
+@keyframes pulseBadge {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: large;
+}
+
+.new-price {
+  color: #ff4757;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 5px;
+}
+@media (max-width: 480px) {
+  .headerTxt {
+    font-size: 28px;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .main, 
+  .wishes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .item {
+    border-width: 8px;
+    padding: 12px;
+  }
+
+  .wish-card {
+    border-width: 8px;
+    padding: 12px;
+  }
+
+  .progress {
+    min-width: 150px;
+    height: 26px;
+  }
+
+  .fill {
+    line-height: 26px;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffee55, #ff9900);
+  border-radius: 6px;
+  border: 3px solid #fdfbf7;
 }
