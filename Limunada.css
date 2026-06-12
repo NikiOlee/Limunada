@@ -117,7 +117,7 @@ header {
 
 .headerTxt {
   font-family: Arial, sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   color: #222;
 }
@@ -153,16 +153,14 @@ h2 {
   justify-content: center;
   transition: all 0.2s;
 }
-
+.item img {
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
 .item:hover {
   transform: translateY(-2px);
   box-shadow: rgba(128, 128, 128, 0.5) 5px 5px 5px;
-}
-
-img {
-  display: grid;
-  width: 100%;
-  max-width: 200px;
 }
 
 .section-title {
