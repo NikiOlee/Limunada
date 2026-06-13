@@ -442,3 +442,50 @@ footer {
   border-radius: 6px;
   border: 3px solid #fdfbf7;
 }
+::selection {
+  background-color: #ffeaa7;
+  color: #000000;
+}
+.item:active,
+.wish-card:active {
+  transform: scale(0.98);
+}
+.theme-btn {
+  font-size: 28px;
+  margin-left: auto;
+  margin-right: 25px;
+  transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #fdfbf7;
+}
+
+body.dark-theme header {
+  background-image: linear-gradient(to right, #494949, #111111);
+}
+
+body.dark-theme .headerTxt {
+  color: #fdfbf7;
+}
+
+body.dark-theme .item,
+body.dark-theme .wish-card {
+  background-color: #2a2a2a;
+  border-color: #444444;
+}
+
+body.dark-theme .whatIn,
+body.dark-theme .wish-details {
+  color: #cccccc;
+}
+
+body.dark-theme footer {
+  background-color: #222222;
+  border-top-color: #444444;
+}
