@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 * {
   padding: 0px;
@@ -106,12 +106,18 @@ input[type="file"] {
 }
 
 body {
+  padding-top: 170px;
   padding-bottom: 40px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #fdfbf7;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,18 +125,42 @@ header {
   padding: 15px 25px;
   border-radius: 0 0 16px 16px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+header.transparent-bg {
+  background-image: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .headerTxt {
   font-size: 40px;
   font-weight: bold;
   color: #222;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.headerTxt.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .logo {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-left: auto;
+}
+
+.logo:active {
+  transform: scale(0.95);
 }
 
 .main {
@@ -334,6 +364,7 @@ h2 {
     transform: rotate(45deg) scale(1);
   }
 }
+
 @keyframes pulsePrice {
   0% {
     transform: rotate(0deg) scale(1);
@@ -348,12 +379,13 @@ h2 {
     transform: rotate(2deg) scale(1.03);
   }
   80% {
-    transform: rotate(0deg) scale(1.03)
+    transform: rotate(0deg) scale(1.03);
   }
   100% {
     transform: rotate(0deg) scale(1);
   }
 }
+
 .old-price {
   text-decoration: line-through;
   color: #888;
@@ -367,6 +399,7 @@ h2 {
   margin-top: 5px;
   animation: pulsePrice 3s infinite ease-in-out;
 }
+
 .section-title {
   text-align: center;
   font-size: 26px;
@@ -374,6 +407,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 footer {
   position: absolute;
   width: 100%;
@@ -381,12 +415,17 @@ footer {
   padding: 10px 20px;
   margin-top: 60px;
   border-top: 2px dashed peachpuff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #888888;
   font-size: 15px;
   background-color: #f9f9f9;
 }
+
 @media (max-width: 480px) {
+  body {
+    padding-top: 120px;
+  }
+
   .headerTxt {
     font-size: 28px;
   }
@@ -400,7 +439,7 @@ footer {
     height: 80px;
   }
 
-  .main, 
+  .main,
   .wishes-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -428,6 +467,7 @@ footer {
     padding-left: 10px;
   }
 }
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -441,23 +481,33 @@ footer {
   border-radius: 6px;
   border: 3px solid #fdfbf7;
 }
+
 ::selection {
   background-color: #ffeaa7;
   color: #000000;
 }
+
 .item:active,
 .wish-card:active {
   transform: scale(0.98);
 }
+
 .theme-btn {
   font-size: 28px;
-  margin-left: auto;
-  margin-right: 25px;
-  transition: transform 0.2s;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-left: 20px;
 }
 
 .theme-btn:hover {
   transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 body.dark-theme {
