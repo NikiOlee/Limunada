@@ -20,95 +20,15 @@
     <div class="main" id="menu-container"></div>
 
     <h2 class="section-title">Želja</h2>
-    <div class="wishes-grid">
-      <div class="wish-card">
-        <div class="wish-content">
-          <h3 class="wish-title">Želja:</h3>
-          <p class="wish-details">
-            Ryzen 5 5600 BOX (procesor), Gigabyte B550M DS3H AC R2 (matična
-            ploča), ASUS Dual RX 6600 8GB (grafička kartica), 2x8GB DDR4 (RAM
-            memorija), Cooler Master MWE Gold 550W V3 (napajanje), Kingston NV2
-            1TB M.2 (SSD disk), Cougar MX 360 (kućište).
-          </p>
-        </div>
-        <div class="wantDiv">
-          <div class="progress">
-            <div class="fill" id="fillN">0%</div>
-          </div>
-          <p class="howMuch"></p>
-        </div>
-      </div>
+<div id="wishes-container" class="wishes-grid">
     </div>
     <footer>
       <p>© 2026 3 Limuna. Osveži se sa stilom! 🍋</p>
     </footer>
 
-    <script src="Dream.js"></script>
     <script src="Theme.js"></script>
     <script src="Header.js"></script>
-
     <!-- СКРИПТ ДЛЯ FIREBASE -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-      // 1. Добавили импорт query и orderBy
-      import {
-        getFirestore,
-        collection,
-        query,
-        orderBy,
-        getDocs,
-      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyDrgUVX_usgZ8Z-BO6UC_FlWcpmtO5M6KI",
-        authDomain: "limunada-fc35a.firebaseapp.com",
-        projectId: "limunada-fc35a",
-        storageBucket: "limunada-fc35a.firebasestorage.app",
-        messagingSenderId: "1019927446811",
-        appId: "1:1019927446811:web:0110147b4861755d13bfbe",
-        measurementId: "G-P25MQEZS87",
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      async function loadMenu() {
-        const menuContainer = document.getElementById("menu-container");
-
-        // 2. Создаем запрос, который сортирует по нашему полю "order" от меньшего к большему
-        const q = query(collection(db, "drinks"), orderBy("order", "asc"));
-        const querySnapshot = await getDocs(q);
-
-        querySnapshot.forEach((doc) => {
-          const item = doc.data();
-          let promoClass = item.isAkcija ? " promo" : "";
-          let akcijaBadge = item.isAkcija
-            ? `<div class="action-badge">Akcija</div>`
-            : "";
-
-          let priceHTML = `<h3 class="price">${item.price} din</h3>`;
-          if (item.oldPrice && item.isAkcija) {
-            priceHTML = `
-          <h3 class="old-price">${item.oldPrice} din</h3>
-          <h3 class="new-price">${item.price} din</h3>
-        `;
-          }
-
-          const cardHTML = `
-        <div class="item${promoClass}">
-          ${akcijaBadge}
-          <h2>${item.name}</h2>
-          <img src="${item.image}" />
-          ${priceHTML}
-          <p class="whatIn">${item.description}</p>
-        </div>
-      `;
-          menuContainer.insertAdjacentHTML("beforeend", cardHTML);
-        });
-      }
-
-      loadMenu();
-    </script>
+    <script type="module" src="firebase.js"></script>
   </body>
 </html>
