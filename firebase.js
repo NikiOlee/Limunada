@@ -47,7 +47,6 @@ async function loadMenu() {
       `;
     }
 
-    // ИСПРАВЛЕНО: Вернул item.image и твою оригинальную верстку карточки!
     const cardHTML = `
       <div class="item${promoClass}">
         ${akcijaBadge}
@@ -61,7 +60,6 @@ async function loadMenu() {
   });
 }
 
-// === ОТСЛЕЖИВАНИЕ ПРОГРЕССА СБОРКИ ПК ===
 function watchPCBuildProgress() {
   const wishesContainer = document.getElementById("wishes-container");
   if (!wishesContainer) return;
